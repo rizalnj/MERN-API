@@ -20,7 +20,6 @@ router.get('/customers', (req, res, next) => {
 
 app.use('/', router);
 
-
 // GET '/users' ==> [{name}]
 
 app.listen(4000);
