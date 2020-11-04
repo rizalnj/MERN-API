@@ -1,0 +1,77 @@
+Standar API                                                                         
+                                                                                
+{root.api}/{version}/{grouping}/{endpoint}                                      
+SAMPLE:                                                                             
+http:/mern-api.fullsnack.com/v1/auth/login                                          
+                                                                                    
+=====================================================================================
+                                                                                    =
+Standar Status response                                                             =
+200 - Ok                       ---> Call API Success                                =
+201 - CREATED               ---> Post Success                                       =
+400 - Bad REQUEST           ---> Error on Client Side (Bisa imput yang salah dll).  =
+401 - UNAUTHORIZED          ---> User not  authorized to the request                =
+403 - FORBIDDEN             ---> User not allowed to access.                        =
+404 - NOT FOUND             ---> Request Endpoint Note Found                        =
+500 - INTERNAL SERVER ERROR ---> Error no server Side                               =
+502 - BAD GETWAY            ---> Invalid Response From Antaher Request              =
+                                                                                    =
+=====================================================================================
+
+GROUP: Authentication
+
+[1] - register
+{root.api}/{version}/auth/register
+req:
+{
+    "name": "Testing",
+    "email": 'test@mail.com",
+    "password": "123456"
+}
+
+res:
+{
+    "message": "Register Success",
+    "data": {
+        "name": Testing".
+        "email": "testmail.com",
+        "password": "123456"
+    }
+}
+
+err-response:
+400 ---> input yang anda masukan salah
+
+[2] - login
+
+GROUP BLOG
+
+[1] - create blog post
+[POST] : {root.api}/{version}/blog/post
+
+req:
+{
+    "title" : "Title Blog",
+    "image" : "imagefile.png,
+    "body"  : "Lorem Ipsum is simply dummy text of the printing"
+}
+res:
+{
+    "message": "Create Blog Post Success",
+    "data": {
+        "post_id" : 1,
+        "title" : "Title Blog",
+        "image" : "imagefile.png",
+        "body" : "Loream Ipsum is simply dummy text of the printing",
+        "creat_at" : "12/06/2020"
+        "author" : {
+            "uid" : 1,
+            "name" : "Testing"
+        }
+    }
+}
+
+[2] - get blog post
+[3] - update blog post
+[4] - delete blog post
+ 
