@@ -14,7 +14,7 @@ router.post('/post', [
     blogController.createBlogPost);
 
     router.get('/posts', blogController.getAllBlogPost);
-    router.get('/post/:postId', blogController.getBlogById);
+    router.get('/posts/:postId', blogController.getBlogById);
 
 
 module.exports = router;
