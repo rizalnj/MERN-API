@@ -62,13 +62,16 @@ exports.getAllBlogPost = (req, res, next) => {
     .then(count => {
         totalData = count;
         return BlogPost.find()
-        .skip((currentPage - 1) * perPage)
-        .limit(perPage);
+        .skip((parseInt(currentPage) - 1) * parseInt(perPage))
+        .limit(parseInt(perPage));
     })
     .then(result => {
         res.status(200).json({
             massage: 'Data Blog Berhasil Dipanggil',
-            data: result
+            data: result,
+            total_data: totalData,
+            per_page: parseInt(perPage),
+            current_page: parseInt(currentPage),
         })
     })
     .catch(err => {
